@@ -1,6 +1,6 @@
 #include "whilenode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "breakexception.h"
 #include "continueexception.h"
 
@@ -13,7 +13,7 @@ WhileNode::~WhileNode() {
     delete body;
 }
 
-Variant WhileNode::eval(Context *context) {
+Variant WhileNode::eval(IContext *context) {
     context = context->childContext();
     context->While(condition, body);
 

@@ -1,6 +1,6 @@
 #include "blocknode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "common.h"
 
 BlockNode::BlockNode(list<Node *> nodes)
@@ -12,7 +12,7 @@ BlockNode::~BlockNode() {
         delete *i;
 }
 
-Variant BlockNode::eval(Context *context) {
+Variant BlockNode::eval(IContext *context) {
     context = context->childContext();
 
     foreach (i, nodes)

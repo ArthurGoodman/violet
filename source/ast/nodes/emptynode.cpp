@@ -1,8 +1,8 @@
 #include "emptynode.h"
 
-#include "context.h"
+#include "icontext.h"
 
-Variant EmptyNode::eval(Context *context) {
+Variant EmptyNode::eval(IContext *context) {
     context->empty();
     return context->getVoid();
 }

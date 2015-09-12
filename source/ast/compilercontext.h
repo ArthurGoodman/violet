@@ -5,13 +5,13 @@
 using namespace std;
 
 #include "common.h"
-#include "context.h"
+#include "icontext.h"
 #include "variant.h"
 
 class Compiler;
 class Node;
 
-class CompilerContext : public Context {
+class CompilerContext : public IContext {
     struct VariableRecord {
         Variant type;
         byte index;
@@ -29,7 +29,7 @@ class CompilerContext : public Context {
 public:
     CompilerContext(Compiler *compiler, CompilerContext *parent = 0);
 
-    Context *childContext();
+    IContext *childContext();
 
     bool hasLocal(string name);
 

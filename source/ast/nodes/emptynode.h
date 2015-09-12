@@ -5,7 +5,7 @@
 
 class EmptyNode : public Node {
 public:
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // EMPTYNODE_H

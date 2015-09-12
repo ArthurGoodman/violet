@@ -5,11 +5,11 @@
 
 class Node;
 
-class Context {
+class IContext {
 public:
-    virtual ~Context();
+    virtual ~IContext();
 
-    virtual Context *childContext() = 0;
+    virtual IContext *childContext() = 0;
 
     virtual bool hasLocal(string name) = 0;
 

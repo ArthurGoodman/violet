@@ -10,7 +10,7 @@ public:
     ForNode(Node *preffix, Node *condition, Node *suffix, Node *body);
     ~ForNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // FORNODE_H

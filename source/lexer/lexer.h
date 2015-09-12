@@ -1,17 +1,31 @@
-#ifndef LEXER_H
-#define LEXER_H
+#ifndef DEFAULTLEXER_H
+#define DEFAULTLEXER_H
 
-#include <string>
-#include <list>
-using namespace std;
+#include <vector>
 
-class Token;
+#include "ilexer.h"
+#include "token.h"
 
-class Lexer {
+class Lexer : public ILexer {
+    static vector<string> operators;
+    static vector<string> keywords;
+
+    static vector<string> tokenTypes;
+
+    list<Token> tokens;
+
+    string source;
+    Token token;
+    int pos;
+
 public:
-    virtual ~Lexer();
+    list<Token> lex(string source);
 
-    virtual list<Token> lex(string source) = 0;
+private:
+    void error(string message);
+    void scan();
+    void skipSpaces();
+    const char &at(int pos);
 };
 
-#endif // LEXER_H
+#endif // DEFAULTLEXER_H

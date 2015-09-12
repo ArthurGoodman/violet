@@ -1,6 +1,6 @@
 #include "donode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "breakexception.h"
 #include "continueexception.h"
 
@@ -13,7 +13,7 @@ DoNode::~DoNode() {
     delete condition;
 }
 
-Variant DoNode::eval(Context *context) {
+Variant DoNode::eval(IContext *context) {
     context = context->childContext();
     context->Do(body, condition);
 

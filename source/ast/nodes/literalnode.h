@@ -9,7 +9,7 @@ class LiteralNode : public Node {
 public:
     LiteralNode(Variant value);
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // LITERALNODE_H

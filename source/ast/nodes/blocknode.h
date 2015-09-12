@@ -13,7 +13,7 @@ public:
     BlockNode(list<Node *> nodes);
     ~BlockNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // BLOCKNODE_H

@@ -4,12 +4,12 @@
 #include <map>
 using namespace std;
 
-#include "context.h"
+#include "icontext.h"
 #include "variant.h"
 
 class Node;
 
-class RuntimeContext : public Context {
+class RuntimeContext : public IContext {
     struct VariableRecord {
         Variant value;
         bool isConst;
@@ -24,7 +24,7 @@ class RuntimeContext : public Context {
 public:
     RuntimeContext(RuntimeContext *parent = 0);
 
-    Context *childContext();
+    IContext *childContext();
 
     bool hasLocal(string name);
 

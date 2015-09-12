@@ -2,7 +2,7 @@
 
 #include "common.h"
 #include "variabledefinitionnode.h"
-#include "context.h"
+#include "icontext.h"
 
 FunctionDefinitionNode::FunctionDefinitionNode(Variant::Type returnType, string name, list<VariableDefinitionNode *> params, Node *body)
     : returnType(returnType), name(name), params(params), body(body) {
@@ -15,6 +15,6 @@ FunctionDefinitionNode::~FunctionDefinitionNode() {
     delete body;
 }
 
-Variant FunctionDefinitionNode::eval(Context *context) {
+Variant FunctionDefinitionNode::eval(IContext *context) {
     return context->getVoid();
 }

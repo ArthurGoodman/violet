@@ -1,6 +1,6 @@
 #include "variableassignnode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 VariableAssignNode::VariableAssignNode(string name, Node *expr)
     : name(name), expr(expr) {
@@ -10,7 +10,7 @@ VariableAssignNode::~VariableAssignNode() {
     delete expr;
 }
 
-Variant VariableAssignNode::eval(Context *context) {
+Variant VariableAssignNode::eval(IContext *context) {
     Variant value = expr->eval(context);
 
     if (!context->set(name, value))

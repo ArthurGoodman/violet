@@ -3,13 +3,13 @@
 
 #include "variant.h"
 
-class Context;
+class IContext;
 
 class Node {
 public:
     virtual ~Node();
 
-    virtual Variant eval(Context *context) = 0;
+    virtual Variant eval(IContext *context) = 0;
 };
 
 #endif // NODE_H

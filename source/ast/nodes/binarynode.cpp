@@ -1,6 +1,6 @@
 #include "binarynode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 BinaryNode::BinaryNode(NodeType type, Node *left, Node *right)
     : type(type), left(left), right(right) {
@@ -11,7 +11,7 @@ BinaryNode::~BinaryNode() {
     delete right;
 }
 
-Variant BinaryNode::eval(Context *context) {
+Variant BinaryNode::eval(IContext *context) {
     const Variant &lv = left->eval(context), &rv = right->eval(context);
 
     switch (type) {

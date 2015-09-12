@@ -7,7 +7,7 @@ using namespace std;
 #include "function.h"
 
 class Node;
-class Context;
+class IContext;
 
 class InterpretedFunction : public Function {
     Node *body;

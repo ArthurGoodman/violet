@@ -13,7 +13,7 @@ public:
     ListNode(list<Node *> nodes);
     ~ListNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // LISTNODE_H

@@ -16,7 +16,7 @@ private:
 public:
     NullaryNode(NodeType type);
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // NULLARYNODE_H

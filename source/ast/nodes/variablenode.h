@@ -14,7 +14,7 @@ public:
 
     string getName();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // VARIABLENODE_H

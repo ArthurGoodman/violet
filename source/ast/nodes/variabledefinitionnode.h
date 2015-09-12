@@ -16,7 +16,7 @@ public:
     VariableDefinitionNode(Variant::Type type, list<pair<string, Node *> > definitions, bool isConst);
     ~VariableDefinitionNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // VARIABLEDEFINITIONNODE_H

@@ -1,6 +1,6 @@
 #include "fornode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "breakexception.h"
 #include "continueexception.h"
 
@@ -15,7 +15,7 @@ ForNode::~ForNode() {
     delete body;
 }
 
-Variant ForNode::eval(Context *context) {
+Variant ForNode::eval(IContext *context) {
     context = context->childContext();
     context->For(preffix, condition, suffix, body);
 

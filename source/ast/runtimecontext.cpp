@@ -17,7 +17,7 @@ RuntimeContext::RuntimeContext(RuntimeContext *parent)
     : parent(parent) {
 }
 
-Context *RuntimeContext::childContext() {
+IContext *RuntimeContext::childContext() {
     return new RuntimeContext(this);
 }
 

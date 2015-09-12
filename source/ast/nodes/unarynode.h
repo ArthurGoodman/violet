@@ -32,7 +32,7 @@ public:
     UnaryNode(NodeType type, Node *node);
     ~UnaryNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // UNARYNODE_H

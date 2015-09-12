@@ -17,7 +17,7 @@ public:
     FunctionDefinitionNode(Variant::Type returnType, string name, list<VariableDefinitionNode *> params, Node *body);
     ~FunctionDefinitionNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // FUNCTIONDEFINITIONNODE_H

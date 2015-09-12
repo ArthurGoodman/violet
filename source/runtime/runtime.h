@@ -1,18 +1,18 @@
 #ifndef RUNTIME_H
 #define RUNTIME_H
 
-class Context;
+class IContext;
 class Compiler;
 
 class Runtime {
-    static Context *root;
+    static IContext *root;
 
 public:
     static void initializeInterpreter();
     static void initializeCompiler(Compiler *compiler);
     static void release();
 
-    static Context *getRoot();
+    static IContext *getRoot();
 };
 
 #endif // RUNTIME_H

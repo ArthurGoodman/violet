@@ -10,7 +10,7 @@ public:
     IfNode(Node *condition, Node *body, Node *elseBody);
     ~IfNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // IFNODE_H

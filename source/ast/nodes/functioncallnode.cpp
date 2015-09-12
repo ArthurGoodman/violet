@@ -1,11 +1,11 @@
 #include "functioncallnode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 FunctionCallNode::FunctionCallNode(string name, list<Variant> args)
     : name(name), args(args) {
 }
 
-Variant FunctionCallNode::eval(Context *context) {
+Variant FunctionCallNode::eval(IContext *context) {
     return context->getVoid();
 }

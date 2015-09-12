@@ -1,6 +1,6 @@
 #include "unarynode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "variablenode.h"
 #include "io.h"
 
@@ -12,7 +12,7 @@ UnaryNode::~UnaryNode() {
     delete node;
 }
 
-Variant UnaryNode::eval(Context *context) {
+Variant UnaryNode::eval(IContext *context) {
     switch (type) {
     case Plus:
         return context->operation(Variant::Add, context->constant(0), node->eval(context));

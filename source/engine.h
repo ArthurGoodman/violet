@@ -5,8 +5,8 @@
 #include <list>
 using namespace std;
 
-class Lexer;
-class Parser;
+class ILexer;
+class IParser;
 class Compiler;
 class VirtualMachine;
 
@@ -28,8 +28,8 @@ class Engine {
     static string input;
     static string output;
 
-    static Lexer *lexer;
-    static Parser *parser;
+    static ILexer *lexer;
+    static IParser *parser;
     static Compiler *compiler;
     static VirtualMachine *virtualMachine;
 

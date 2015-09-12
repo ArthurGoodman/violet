@@ -31,7 +31,7 @@ public:
     BinaryNode(NodeType type, Node *left, Node *right);
     ~BinaryNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // BINARYNODE_H

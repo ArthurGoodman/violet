@@ -11,7 +11,7 @@ public:
     CastNode(Variant::Type type, Node *expr);
     ~CastNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // CASTNODE_H

@@ -13,7 +13,7 @@ class FunctionCallNode : public Node {
 public:
     FunctionCallNode(string name, list<Variant> args);
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // FUNCTIONCALLNODE_H

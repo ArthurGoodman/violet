@@ -1,11 +1,11 @@
 #include "literalnode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 LiteralNode::LiteralNode(Variant value)
     : value(value) {
 }
 
-Variant LiteralNode::eval(Context *context) {
+Variant LiteralNode::eval(IContext *context) {
     return context->constant(value);
 }

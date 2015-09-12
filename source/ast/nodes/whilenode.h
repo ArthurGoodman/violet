@@ -10,7 +10,7 @@ public:
     WhileNode(Node *condition, Node *body);
     ~WhileNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // WHILENODE_H

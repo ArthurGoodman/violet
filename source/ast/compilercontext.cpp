@@ -16,7 +16,7 @@ CompilerContext::CompilerContext(Compiler *compiler, CompilerContext *parent)
     : compiler(compiler), parent(parent) {
 }
 
-Context *CompilerContext::childContext() {
+IContext *CompilerContext::childContext() {
     return new CompilerContext(compiler, this);
 }
 

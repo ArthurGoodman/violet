@@ -1,6 +1,6 @@
 #include "nullarynode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "breakexception.h"
 #include "continueexception.h"
 
@@ -8,7 +8,7 @@ NullaryNode::NullaryNode(NodeType type)
     : type(type) {
 }
 
-Variant NullaryNode::eval(Context *context) {
+Variant NullaryNode::eval(IContext *context) {
     switch (type) {
     case Break:
         throw new BreakException;

@@ -1,6 +1,6 @@
 #include "ifnode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 IfNode::IfNode(Node *condition, Node *body, Node *elseBody)
     : condition(condition), body(body), elseBody(elseBody) {
@@ -14,7 +14,7 @@ IfNode::~IfNode() {
         delete elseBody;
 }
 
-Variant IfNode::eval(Context *context) {
+Variant IfNode::eval(IContext *context) {
     context = context->childContext();
     context->If(condition, body, elseBody);
 

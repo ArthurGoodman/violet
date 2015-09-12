@@ -1,8 +1,8 @@
 #include "engine.h"
 
 #include "common.h"
-#include "defaultlexer.h"
-#include "defaultparser.h"
+#include "lexer.h"
+#include "parser.h"
 #include "compiler.h"
 #include "virtualmachine.h"
 #include "io.h"
@@ -21,8 +21,8 @@ Engine::Action Engine::action;
 string Engine::input;
 string Engine::output;
 
-Lexer *Engine::lexer;
-Parser *Engine::parser;
+ILexer *Engine::lexer;
+IParser *Engine::parser;
 Compiler *Engine::compiler;
 VirtualMachine *Engine::virtualMachine;
 
@@ -36,8 +36,8 @@ void Engine::init(int argc, char **argv) {
 
     parseArgs();
 
-    lexer = new DefaultLexer;
-    parser = new DefaultParser;
+    lexer = new Lexer;
+    parser = new Parser;
     compiler = new Compiler;
     virtualMachine = new VirtualMachine;
 }
@@ -168,7 +168,7 @@ void Engine::parseArgs() {
 
         input = "scripts/test.vi";
         action = CompileAndRun;
-//        action = Interpret;
+        //action = Interpret;
     }
 
     //if (action == None) {

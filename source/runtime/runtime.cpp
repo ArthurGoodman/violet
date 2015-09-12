@@ -3,7 +3,7 @@
 #include "runtimecontext.h"
 #include "compilercontext.h"
 
-Context *Runtime::root;
+IContext *Runtime::root;
 
 void Runtime::initializeInterpreter() {
     root = new RuntimeContext;
@@ -17,6 +17,6 @@ void Runtime::release() {
     delete root;
 }
 
-Context *Runtime::getRoot() {
+IContext *Runtime::getRoot() {
     return root;
 }

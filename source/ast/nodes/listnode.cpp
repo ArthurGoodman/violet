@@ -1,6 +1,6 @@
 #include "listnode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "common.h"
 
 ListNode::ListNode(list<Node *> nodes)
@@ -12,7 +12,7 @@ ListNode::~ListNode() {
         delete *i;
 }
 
-Variant ListNode::eval(Context *context) {
+Variant ListNode::eval(IContext *context) {
     Variant value = context->getVoid();
 
     foreach (i, nodes) {

@@ -3,7 +3,7 @@
 #include "common.h"
 #include "variant.h"
 #include "node.h"
-#include "context.h"
+#include "icontext.h"
 #include "runtime.h"
 
 InterpretedFunction::InterpretedFunction(Node *body)
@@ -15,7 +15,7 @@ InterpretedFunction::~InterpretedFunction() {
 }
 
 Variant InterpretedFunction::call(list<Variant> args) {
-    Context *context = Runtime::getRoot()->childContext();
+    IContext *context = Runtime::getRoot()->childContext();
 
     list<Variant>::iterator a = args.begin();
 

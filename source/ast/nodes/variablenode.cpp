@@ -1,6 +1,6 @@
 #include "variablenode.h"
 
-#include "context.h"
+#include "icontext.h"
 
 VariableNode::VariableNode(string name)
     : name(name) {
@@ -10,6 +10,6 @@ string VariableNode::getName() {
     return name;
 }
 
-Variant VariableNode::eval(Context *context) {
+Variant VariableNode::eval(IContext *context) {
     return context->get(name);
 }

@@ -10,7 +10,7 @@ public:
     DoNode(Node *body, Node *condition);
     ~DoNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // DONODE_H

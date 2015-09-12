@@ -14,7 +14,7 @@ public:
     VariableAssignNode(string name, Node *expr);
     ~VariableAssignNode();
 
-    Variant eval(Context *context);
+    Variant eval(IContext *context);
 };
 
 #endif // VARIABLEASSIGNNODE_H

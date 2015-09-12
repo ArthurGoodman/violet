@@ -1,6 +1,6 @@
 #include "variabledefinitionnode.h"
 
-#include "context.h"
+#include "icontext.h"
 #include "common.h"
 
 VariableDefinitionNode::VariableDefinitionNode(Variant::Type type, list<pair<string, Node *>> definitions, bool isConst)
@@ -12,7 +12,7 @@ VariableDefinitionNode::~VariableDefinitionNode() {
         delete i->second;
 }
 
-Variant VariableDefinitionNode::eval(Context *context) {
+Variant VariableDefinitionNode::eval(IContext *context) {
     foreach (i, definitions) {
         if (context->hasLocal(i->first)) {
             context->error("variable '" + i->first + "' is already defined");

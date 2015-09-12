@@ -26,10 +26,6 @@ HEADERS += \
     source/common/token.h \
     source/common/utility.h \
     source/compiler/program.h \
-    source/lexer/defaultlexer.h \
-    source/lexer/lexer.h \
-    source/parser/defaultparser.h \
-    source/parser/parser.h \
     source/ast/nodes/ifnode.h \
     source/ast/nodes/whilenode.h \
     source/ast/nodes/fornode.h \
@@ -72,12 +68,16 @@ HEADERS += \
     source/common/vector.h \
     source/exception/compilationerror.h \
     source/variant/typevariant.h \
-    source/ast/context.h \
     source/ast/nodes/functiondefinitionnode.h \
     source/runtime/function.h \
     source/runtime/interpretedfunction.h \
     source/runtime/compiledfunction.h \
-    source/ast/nodes/functioncallnode.h
+    source/ast/nodes/functioncallnode.h \
+    source/parser/iparser.h \
+    source/parser/parser.h \
+    source/lexer/ilexer.h \
+    source/lexer/lexer.h \
+    source/ast/icontext.h
 
 SOURCES += \
     source/engine.cpp \
@@ -88,10 +88,6 @@ SOURCES += \
     source/common/token.cpp \
     source/common/utility.cpp \
     source/compiler/program.cpp \
-    source/lexer/defaultlexer.cpp \
-    source/lexer/lexer.cpp \
-    source/parser/defaultparser.cpp \
-    source/parser/parser.cpp \
     source/ast/nodes/ifnode.cpp \
     source/ast/nodes/whilenode.cpp \
     source/ast/nodes/fornode.cpp \
@@ -132,12 +128,16 @@ SOURCES += \
     source/common/vector.cpp \
     source/exception/compilationerror.cpp \
     source/variant/typevariant.cpp \
-    source/ast/context.cpp \
     source/ast/nodes/functiondefinitionnode.cpp \
     source/runtime/function.cpp \
     source/runtime/interpretedfunction.cpp \
     source/runtime/compiledfunction.cpp \
-    source/ast/nodes/functioncallnode.cpp
+    source/ast/nodes/functioncallnode.cpp \
+    source/parser/iparser.cpp \
+    source/parser/parser.cpp \
+    source/lexer/ilexer.cpp \
+    source/lexer/lexer.cpp \
+    source/ast/icontext.cpp
 
 OTHER_FILES  += \
     scripts/test.vi \
