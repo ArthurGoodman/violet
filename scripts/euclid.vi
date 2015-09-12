@@ -1,0 +1,20 @@
+int m = 196364154, n = 2478
+
+while (m != n) {
+    if ((m % 2 == 0) & (n % 2 == 0)) {
+        m = m / 2
+        n = n / 2
+    } else if ((m % 2 == 0) & (n % 2 > 0)) {
+        m = m / 2
+    } else if ((m % 2 > 0) & (n % 2 == 0)) {
+        if (n > m) n = n - m
+        else n = m - n
+    } else if ((m % 2 > 0) & (n % 2 > 0)) {
+        int temp = n
+        if (n > m) n = n - m
+        else n = m - n
+        m = temp
+    }
+}
+
+print m // 1239

@@ -1,0 +1,6 @@
+X(tId, "")
+X(tCharLiteral, "")
+X(tIntLiteral, "")
+X(tFloatLiteral, "")
+X(tDoubleLiteral, "")
+X(tEnd, "")
