@@ -166,7 +166,7 @@ void Engine::parseArgs() {
         //IO::error("input file is not specified");
         //return;
 
-        input = "scripts/test.vi";
+        input = "scripts/script.vi";
         action = CompileAndRun;
         //action = Interpret;
     }

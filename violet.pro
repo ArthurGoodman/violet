@@ -140,13 +140,11 @@ SOURCES += \
     source/ast/icontext.cpp
 
 OTHER_FILES  += \
-    scripts/test.vi \
+    scripts/script.vi \
+    scripts/euclid.vi \
+    scripts/simple.vi \
+    scripts/factorial.vi \
     source/common/definitions/keywords.def \
     source/common/definitions/operators.def \
     source/common/definitions/othertokens.def \
     source/common/definitions/instructions.def
-
-DISTFILES += \
-    scripts/euclid.vi \
-    scripts/simple.vi \
-    scripts/factorial.vi
