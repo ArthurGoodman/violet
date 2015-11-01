@@ -9,8 +9,8 @@ FunctionDefinitionNode::FunctionDefinitionNode(Variant::Type returnType, string 
 }
 
 FunctionDefinitionNode::~FunctionDefinitionNode() {
-    foreach(i, params)
-        delete *i;
+    for (Node *node : params)
+        delete node;
 
     delete body;
 }

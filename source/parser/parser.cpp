@@ -189,7 +189,7 @@ Node *Parser::expr() {
 Node *Parser::logicOr() {
     Node *node = logicAnd();
 
-    forever {
+    while (true) {
         if (accept(tOr))
             node = new BinaryNode(BinaryNode::Or, node, logicAnd());
         else
@@ -202,7 +202,7 @@ Node *Parser::logicOr() {
 Node *Parser::logicAnd() {
     Node *node = equality();
 
-    forever {
+    while (true) {
         if (accept(tAnd))
             node = new BinaryNode(BinaryNode::And, node, equality());
         else
@@ -215,7 +215,7 @@ Node *Parser::logicAnd() {
 Node *Parser::equality() {
     Node *node = relation();
 
-    forever {
+    while (true) {
         if (accept(tEq))
             node = new BinaryNode(BinaryNode::Eq, node, relation());
         else if (accept(tNe))
@@ -230,7 +230,7 @@ Node *Parser::equality() {
 Node *Parser::relation() {
     Node *node = addSub();
 
-    forever {
+    while (true) {
         if (accept(tLt))
             node = new BinaryNode(BinaryNode::Lt, node, addSub());
         else if (accept(tGt))
@@ -249,7 +249,7 @@ Node *Parser::relation() {
 Node *Parser::addSub() {
     Node *node = mulDiv();
 
-    forever {
+    while (true) {
         if (accept(tPlus))
             node = new BinaryNode(BinaryNode::Plus, node, mulDiv());
         else if (accept(tMinus))
@@ -264,7 +264,7 @@ Node *Parser::addSub() {
 Node *Parser::mulDiv() {
     Node *node = preffix();
 
-    forever {
+    while (true) {
         if (accept(tMultiply))
             node = new BinaryNode(BinaryNode::Multiply, node, preffix());
         else if (accept(tDivide))

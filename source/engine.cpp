@@ -117,7 +117,7 @@ void Engine::defaults() {
 void Engine::parseArgs() {
     error = true;
 
-    foreach (arg, args) {
+    for (string arg : args) {
         //if ((*arg)[0] == '-') {
         //    string option = arg->substr(1);
 
@@ -143,7 +143,7 @@ void Engine::parseArgs() {
         //        return;
         //    }
         //} else
-        input = *arg;
+        input = arg;
     }
 
     //if (!input.empty() && output.empty()) {

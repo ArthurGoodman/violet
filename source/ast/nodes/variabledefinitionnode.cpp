@@ -8,23 +8,23 @@ VariableDefinitionNode::VariableDefinitionNode(Variant::Type type, list<pair<str
 }
 
 VariableDefinitionNode::~VariableDefinitionNode() {
-    foreach (i, definitions)
-        delete i->second;
+    for (auto &def : definitions)
+        delete def.second;
 }
 
 Variant VariableDefinitionNode::eval(IContext *context) {
-    foreach (i, definitions) {
-        if (context->hasLocal(i->first)) {
-            context->error("variable '" + i->first + "' is already defined");
+    for (auto &def : definitions) {
+        if (context->hasLocal(def.first)) {
+            context->error("variable '" + def.first + "' is already defined");
             return context->getVoid();
         }
 
-        Variant value = i->second ? i->second->eval(context) : context->constant(0);
+        Variant value = def.second ? def.second->eval(context) : context->constant(0);
 
         if (type != Variant::Undefined)
             value = context->cast(value, type);
 
-        context->defineLocal(i->first, value, isConst);
+        context->defineLocal(def.first, value, isConst);
     }
 
     return context->getVoid();

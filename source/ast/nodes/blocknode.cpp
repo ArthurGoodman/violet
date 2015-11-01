@@ -8,15 +8,15 @@ BlockNode::BlockNode(list<Node *> nodes)
 }
 
 BlockNode::~BlockNode() {
-    foreach (i, nodes)
-        delete *i;
+    for (Node *node : nodes)
+        delete node;
 }
 
 Variant BlockNode::eval(IContext *context) {
     context = context->childContext();
 
-    foreach (i, nodes)
-        context->ignore((*i)->eval(context));
+    for (Node *node : nodes)
+        context->ignore(node->eval(context));
 
     Variant Void = context->getVoid();
     delete context;

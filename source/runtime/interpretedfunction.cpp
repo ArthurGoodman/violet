@@ -19,8 +19,8 @@ Variant InterpretedFunction::call(list<Variant> args) {
 
     list<Variant>::iterator a = args.begin();
 
-    foreach (i, params)
-        context->defineLocal(*i, *a++);
+    for (string &param : params)
+        context->defineLocal(param, *a++);
 
     const Variant &value = body->eval(context);
     delete context;

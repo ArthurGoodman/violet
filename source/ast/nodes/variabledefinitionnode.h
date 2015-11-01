@@ -9,11 +9,11 @@ using namespace std;
 
 class VariableDefinitionNode : public Node {
     Variant::Type type;
-    list<pair<string, Node *> > definitions;
+    list<pair<string, Node *>> definitions;
     bool isConst;
 
 public:
-    VariableDefinitionNode(Variant::Type type, list<pair<string, Node *> > definitions, bool isConst);
+    VariableDefinitionNode(Variant::Type type, list<pair<string, Node *>> definitions, bool isConst);
     ~VariableDefinitionNode();
 
     Variant eval(IContext *context);

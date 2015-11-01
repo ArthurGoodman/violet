@@ -8,17 +8,18 @@ ListNode::ListNode(list<Node *> nodes)
 }
 
 ListNode::~ListNode() {
-    foreach (i, nodes)
-        delete *i;
+    for (Node *node : nodes)
+        delete node;
 }
 
 Variant ListNode::eval(IContext *context) {
     Variant value = context->getVoid();
 
-    foreach (i, nodes) {
-        value = (*i)->eval(context);
+    unsigned int i = 0;
+    for (Node *node : nodes) {
+        value = node->eval(context);
 
-        if (next(i) != nodes.end())
+        if (i++ < nodes.size() - 1)
             context->ignore(value);
     }
 

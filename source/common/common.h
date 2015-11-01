@@ -7,10 +7,6 @@ using namespace std;
 
 typedef unsigned char byte;
 
-#define foreach(i, c) for (auto i = c.begin(); i != c.end(); ++i)
-
-#define forever while (true)
-
 template <class A, class B>
 list<B> &operator<<(list<B> &l, const A &e) {
     l.push_back((B)e);
